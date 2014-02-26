@@ -10,11 +10,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/vendor.css -->
+        <link rel="stylesheet" href="bower_components/todomvc-common/base.css">
+        <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
     </head>
     <body>
@@ -23,18 +23,23 @@
         <![endif]-->
 
 
-        <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>jQuery</li>
-            <li>Backbone.js</li>
-            <li>Underscore.js</li>
-            <li>Modernizr</li>
-
-          </ul>
-        </div>
+        <section id="todoapp">
+            <header id="header">
+                <h1>todos</h1>
+                <input id="new-todo" placeholder="What needs to be done?" autofocus>
+            </header>
+            <section id="main">
+                <input id="toggle-all" type="checkbox">
+                <label for="toggle-all">Mark all as complete</label>
+                <ul id="todo-list"></ul>
+            </section>
+            <footer id="footer"></footer>
+        </section>
+        <footer id="info">
+            <p>Double-click to edit a todo</p>
+            <p>Written by <a href="https://github.com/addyosmani">Addy Osmani</a></p>
+            <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+        </footer>
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -51,11 +56,17 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <script src="scripts/templates.js"></script>
+        <script src="scripts/models/todo.js"></script>
+        <script src="scripts/collections/todos.js"></script>
+        <script src="scripts/views/todo.js"></script>
+        <script src="scripts/views/app.js"></script>
+        <script src="scripts/routes/todo.js"></script>
         <!-- endbuild -->
 </body>
 </html>

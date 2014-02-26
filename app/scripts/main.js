@@ -1,4 +1,4 @@
-/*global TestingTodoBackbone, $*/
+/*global TestingTodoBackbone, $, Backbone*/
 
 
 window.TestingTodoBackbone = {
@@ -9,6 +9,8 @@ window.TestingTodoBackbone = {
     init: function () {
         'use strict';
         console.log('Hello from Backbone!');
+        new TestingTodoBackbone.Routers.TodoRouter();
+        Backbone.history.start();
     }
 };
 
